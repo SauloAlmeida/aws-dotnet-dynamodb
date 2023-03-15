@@ -18,7 +18,8 @@ internal class Program
 
         builder.Services.AddSingleton<IAmazonDynamoDB, AmazonDynamoDBClient>(s =>
         {
-            var credentials = new BasicAWSCredentials("AKIATDQ37ZCNQIFDW443", "60z8zmER1pnL/aTfiP3PAYzr+jWvA0iyp2+6SRmM");
+            var credentials = new BasicAWSCredentials(Environment.GetEnvironmentVariable("AWS_ACCESS_KEY"), 
+                                                      Environment.GetEnvironmentVariable("AWS_SECRET_KEY"));
 
             return new AmazonDynamoDBClient(credentials, Amazon.RegionEndpoint.USEast2);
         });
