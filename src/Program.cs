@@ -18,7 +18,7 @@ internal class Program
 
         builder.Services.AddSingleton<IAmazonDynamoDB, AmazonDynamoDBClient>(s =>
         {
-            var credentials = new BasicAWSCredentials("", "");
+            var credentials = new BasicAWSCredentials("AKIATDQ37ZCNQIFDW443", "60z8zmER1pnL/aTfiP3PAYzr+jWvA0iyp2+6SRmM");
 
             return new AmazonDynamoDBClient(credentials, Amazon.RegionEndpoint.USEast2);
         });
