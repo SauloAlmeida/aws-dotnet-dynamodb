@@ -44,7 +44,7 @@ namespace AWSDotnetDynamoDB.Data
 
             var document = Document.FromAttributeMap(response.Item);
 
-            return JsonSerializer.Deserialize<ProductOutput>(document);
+            return JsonSerializer.Deserialize<ProductOutput>(document.ToJson());
         }
 
         public async Task<bool> InsertAsync(Product product)
